@@ -1,0 +1,246 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery Mobile Web App</title>
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+
+<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<script src="http://ajax.aspnetcdn.com/ajax/mobileservices/MobileServices.Web-1.2.5.min.js"></script>
+<link rel="stylesheet" href="testingg.css" />
+<link rel="stylesheet" href="themes/testingg.min.css" />
+<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+<link href="styles/custom.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<div data-role="page" id="home1"data-theme="C">
+<div data-role="header" class="ui-content" data-theme="C">
+<h3>home page</h3>
+<img src="rasmussen.jpg" class="ui-btn-right" />
+</div>
+<div data-role="main">
+  <p>Here is where we will see if I am able to use all elements of jquery mobile for this assignment.</p>
+</div>
+
+<div data-role="content">
+  <ul data-role="listview" data-theme="B" data-filter="true" class="ui-link">
+    <li><a href="#food1">Food</a></li>
+    <li><a href="#places1">Places</a></li>
+    <li><a href="#drinks1">Drinks</a></li>
+    <li><a href="#games1">Games</a></li>
+    <li><a href="#drinks1">Drinks</a></li>
+    <li><a href="#dogs1">Dogs</a></li>
+    <li><a href="#me1">Me</a></li>
+    <li><a href="#form1">Form test</a></li>
+  </ul>
+  <div data-role="footer"class="ui-content">
+    <p>©Andrew Sandberg</p>
+  </div>
+</div>
+</div>
+
+
+<div data-role="page" id="food1" data-add-back-btn="true"data-theme="b">
+  <div data-role="header" data-add-back-btn="true">
+    <h3>Food!</h3>
+  </div>
+  <div data-role="main">
+    <p>Here is where I will talk about all the different types of food I like to eat</p>
+  </div>
+
+    <div data-role="content">
+      <ol data-role="listview">
+        <li>Kanes chicken</li>
+        <li>Steak</li>
+        <li>Bacon</li>
+        <li>Lobster</li>
+        <li>Garlic shrimp</li>
+        <li>Philly cheesesteak</li>
+        <li>Pork fried rice</li>
+      </ol>
+
+    </div>
+  </div>
+
+
+
+
+<div data-role="page" id="form1" data-theme="c" data-add-back-btn="true">
+
+<div data-role="header" data-theme="a" data-add-back-btn="true">
+
+<h1>Back button??</h1>
+
+
+<div data-role="content">
+
+This will test my HTML5 localStorage in my app.
+
+</p>
+
+<textarea class="localstorage" placeholder="Anything you type here will be saved with HTML5 localStorage." autofocus></textarea>
+
+<button class="clear">Clear localStorage</button>
+
+<button class="empty">Empty localStorage</button>
+
+</div>
+
+
+</div>
+
+<div data-role="content">
+
+<form action="form.php" method="post">
+
+<label class="localstorage" for="fname">First name:</label>
+
+<input type="text" name="fname" id="fname" data-clear-btn="true">
+
+
+<label for="lname">Last name:</label>
+
+<input type="text" name="fname" id="lname" data-clear-btn="true">
+
+
+<label for="cookie">Favorite cookie:</label>
+
+<input type="text" name="fname" id="cookie" data-clear-btn="true">
+
+
+
+<input type="reset" value="Reset Button">
+
+<input type="submit" value="Submit Button">
+
+</form>
+
+</div>
+
+
+  <div data-role="footer" data-theme="a">
+    <p>Space for footer</p>
+</div>
+</div>
+
+
+
+
+<div data-role="page" id="places1" data-add-back-btn="true">
+  <div data-role="header" data-add-back-btn="true">
+    <h3>Places!</h3>
+  </div>
+  <div data-role="main">
+    <p>Here is where I will show all the different places in the world I think are pretty</p>
+  </div>
+</div>
+
+
+<div data-role="page" id="games1" data-add-back-btn="true" data-theme="b">
+  <div data-role="header" data-add-back-btn="true">
+    <h3>Games!</h3>
+  </div>
+  <div data-role="main">
+    <p>Here is where I will put all the different games I like to play</p>
+  </div>
+</div>
+
+<div data-role="page" id="drinks1" data-add-back-btn="true">
+  <div data-role="header" data-add-back-btn="true">
+    <h3>Drinks!</h3>
+  </div>
+  <div data-role="main">
+    <p>Here is where I will put all the different drinks I like to have</p>
+  </div>
+</div>
+
+
+<div data-role="page" id="dogs1" data-add-back-btn="true">
+  <div data-role="header" data-add-back-btn="true">
+    <h3>Dogs!</h3>
+  </div>
+  <div data-role="main">
+    <p>Here is where I will put my favorite pictures of cute dogs</p>
+  </div>
+</div>
+
+
+<div data-role="page" id="me1" data-add-back-btn="true">
+  <div data-role="header" data-add-back-btn="true">
+    <h3>About me!</h3>
+  </div>
+  <div data-role="main">
+    <p>Here is where I will put some information about myself.</p>
+  </div>
+</div>
+
+<script>
+
+(function() {
+
+var rasm = document.querySelector('.localstorage');
+
+function supportsLocalStorage() {
+
+return typeof(Storage)!== 'undefined';
+
+}
+
+if (!supportsLocalStorage()) {
+
+rasm.value = 'Your browser does not support localStorage.';
+
+} else {
+
+try {
+
+setInterval(function() {
+
+localStorage.setItem('autosave', rasm.value);
+
+}, 1000);
+
+} catch (e) {
+
+if (e == QUOTA_EXCEEDED_ERR) {
+
+alert('Quota exceeded!');
+
+}
+
+}
+
+if (localStorage.getItem('autosave')) {
+
+rasm.value = localStorage.getItem('autosave');
+
+}
+
+document.querySelector('.clear').onclick = function() {
+
+rasm.value = '';
+
+localStorage.removeItem('autosave');
+
+};
+
+document.querySelector('.empty').onclick = function() {
+
+rasm.value = '';
+
+localStorage.clear();
+
+};
+
+}
+
+})();
+
+</script>
+
+
+
+</body>
+</html>
